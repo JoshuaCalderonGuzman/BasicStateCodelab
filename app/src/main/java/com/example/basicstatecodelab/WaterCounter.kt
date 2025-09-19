@@ -29,12 +29,13 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import com.example.basicstatecodelab.ui.theme.WellnessTaskItem
 import androidx.compose.foundation.layout.Row
+import androidx.compose.runtime.saveable.rememberSaveable
 
 
 @Composable
 fun WaterCounter(modifier: Modifier = Modifier) {
     Column(modifier = modifier.padding(16.dp)) {
-        var count by remember { mutableStateOf(0) }
+        var count by rememberSaveable { mutableStateOf(0) }
         if (count > 0) {
             Text("You've had $count glasses.")
         }
